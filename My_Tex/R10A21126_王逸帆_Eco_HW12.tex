@@ -1,0 +1,355 @@
+\documentclass[UTF8,a4paper,14pt]{ctexart}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+%for 字體
+%https://tug.org/FontCatalogue/
+% \usepackage[T1]{fontenc}
+% \usepackage{tgbonum}
+% \usepackage[bitstream-charter]{mathdesign}
+% \usepackage[T1]{fontenc}
+% \usepackage{bm}#粗體
+%\usepackage{boondox-calo}
+\usepackage{textcomp}
+\usepackage{fancyhdr}%导入fancyhdrf包
+\usepackage{ctex}%导入ctex包
+\usepackage{enumitem} %for在Latex使用條列式清單
+\usepackage{varwidth}
+\usepackage{soul} %for \ul
+\usepackage{comment}%\begin{comment}\end{comment}
+\usepackage{cancel}%\cancel{}
+%\usepackage{unicode-math}
+
+\usepackage[dvipsnames, svgnames, x_11names]{xcolor}
+
+\usepackage[low-sup]{subdepth}
+\usepackage{subdepth}
+
+\newcommand{\indep}{\Perp \!\!\! \Perp}
+
+\usepackage{amsthm}
+\DeclareMathOperator{\E}{\mathbb{E}}
+\DeclareMathOperator{\Var}{\textbf{Var}}
+\DeclareMathOperator{\Cov}{\textbf{Cov}}
+\DeclareMathOperator{\Cor}{\textbf{Cor}}
+\DeclareMathOperator{\X}{\mathbf{X}}
+\DeclareMathOperator{\Pro}{\mathbf{P}}
+\DeclareMathOperator{\M}{\mathbf{M}}
+\DeclareMathOperator{\Id}{\mathbf{I}}
+\DeclareMathOperator{\Y}{\mathbf{Y}}
+\DeclareMathOperator{\MSFE}{\mathbf{MSFE}}
+\DeclareMathOperator{\e}{\mathbb{e}}
+\DeclareMathOperator{\V}{\mathbf{V}} 
+\DeclareMathOperator{\tr}{\text{tr}}
+\DeclareMathOperator{\A}{\textbf{A}}
+\DeclareMathOperator{\diag}{diag}
+\DeclareRobustCommand{\rchi}{{\mathpalette\irchi\relax}}
+\newcommand{\irchi}[2]{\raisebox{\depth}{$#1\chi$}} % inner command, used by \rchi
+
+\DeclareMathSizes{10}{10}{7}{3}
+
+\usepackage[a4paper, margin=1in]{geometry}
+% \setlength\parskip{5ex}% it would be better define distance in ex (5ex) 
+                         %  or in pt, pc, mm, etc (see edit below)
+
+
+\usepackage{array, makecell} %
+
+
+%中英文設定
+%\usepackage{fontspec}
+% \setmainfont{TeX Gyre Termes}
+% \usepackage{xeCJK} %引用中文字的指令集
+% %\setCJKmainfont{PMingLiU}
+\setCJKmainfont{DFKai-SB}
+% \setmainfont{Times New Roman}
+% \setCJKmonofont{DFKai-SB}
+\pagenumbering{arabic}%设置页码格式
+\pagestyle{fancy}
+\fancyhead{} % 初始化页眉
+\usepackage{advdate}
+
+% \newcommand{\yesterday}{{\AdvanceDate[-1]\today}}
+
+\fancyhead[C]{Stochastic Caculus\quad  R10A21126\quad  WANG YIFAN\quad   \today}
+%\fancyhead[LE]{\textsl{\rightmark}}
+%\fancyfoot{} % 初始化页脚
+%\fancyfoot[LO]{奇数页左页脚}
+%\fancyfoot[LE]{偶数页左页脚}
+%\fancyfoot[RO]{奇数页右页脚}
+%\fancyfoot[RE]{偶数页右页脚}
+
+% \title{{Econometrics HW 05}}
+% \author{R10A21126}
+% \date{\today}
+
+%\fancyhf{}
+\usepackage{lastpage}
+\cfoot{Page \thepage \hspace{1pt} of\, \pageref{LastPage}}
+
+\renewcommand{\headrulewidth}{0.1pt}%分隔线宽度4磅
+%\renewcommand{\footrulewidth}{4pt}
+
+\allowdisplaybreaks
+\usepackage[english]{babel}
+%\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+
+
+\usepackage[most]{tcolorbox}
+
+\definecolor{babyblue}{rgb}{0.54, 0.81, 0.94}
+
+\newtcolorbox[auto counter]{mybox}[1]{
+    enhanced,
+    arc= 1 mm,boxrule=1.5pt,
+    colframe=babyblue!80!pink,
+    colback=white,
+    coltitle=black,
+    % colback=blue!5!white,
+    attach boxed title to top left=
+    {xshift=1.5em,yshift=-\tcboxedtitleheight/2},
+    boxed title style={size=small,
+    % frame hidden,
+    colback=White},
+    top=0.15in,
+    % fonttitle=\bfseries,
+    title= {#1},
+    breakable
+  }
+
+\newtcolorbox[auto counter]{Problem}[2][]{
+    enhanced,drop shadow={Pink!50!white},
+    colframe=pink!80!white,
+    fonttitle=\bfseries,
+    title=Problem ~\thetcbcounter. #2,
+    %separator sign={.},
+    coltitle=black,
+    colback=pink!15,
+    top=0.15in,
+    breakable
+  }
+
+\newenvironment{solution}
+  {\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Solution]}
+  {\end{proof}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+%\theoremstyle{notation}
+\newtheorem*{notation}{\underline{Notation}}
+%\newtheorem*{convention}{\underline{Convention}}
+\newtheorem*{convention}{\underline{Convention}}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\newenvironment{amatrix}[2]{%% [2] for 2 parameters 
+  \left[\begin{array}
+    %{cc\,|\,cc}
+    %  {@{}*{#2}{c}\,|\,c*{#1}{c}}
+     {{}*{#1}{c}\,|\,c*{#2}{c}}
+}{%
+  \end{array}\right]
+}
+% For augmented matrix  
+%https://tex.stackexchange.com/questions/2233/whats-the-best-way-make-an-augmented-coefficient-matrix
+
+
+\begin{document}
+
+\section{開始講故事}
+
+賭博自古就有，西方，宗教革命，就從god's will變成當作一門學問來看。
+
+學了機率論，慢慢會改變一些直覺。
+
+De Moivre 在1733第一個證明中央極限定理
+
+牛頓是鑄幣局長，在生計上幫他
+
+老師1983在MIT訪問，大家在慶祝CIT證明250周年
+
+20世紀才開始，幾率論有公理化的探討。
+
+Kolmogorov 1933
+
+做證明，如果把題目搞得很清楚，大概就做好了一半了。
+
+社科的問題，用數學模型，如何描述
+
+模型一定是不對的，只是對理想狀態的描述，要思考Uncertainty的問題
+
+\section{開始講一些基本觀念}
+\subsection{$\sigma$ - algebra}
+你們知道Sigma-algebra對不對
+
+^^
+
+\begin{equation}
+  \sigma - algebra
+\end{equation}
+
+random phenomenon
+
+\begin{equation}
+  \begin{aligned}
+    \X: \Omega \rightarrow \mathbb{R} \\
+    A=\left\{\X\leq a\right\} \\
+    B=\left\{\X\geq b\right\}    
+  \end{aligned}
+\end{equation}
+
+\begin{equation}
+  \begin{aligned}
+    \mathfrak{B} :\text{ Borel $\sigma$- algebra
+    the smallest  $\sigma$ -algebra
+    containing all the open sets (interxxx) in $\mathbb{R}$}
+  \end{aligned}
+\end{equation}
+
+\begin{equation}
+  \begin{aligned}
+   \Omega \mathcal{F}  \overset{X}{\rightarrow }\Omega' \mathcal{F}' \\
+x^{-1}(\mathcal{F} ') \subset \mathcal{F}    
+  \end{aligned}
+\end{equation}
+$X$ is called a $\Omega$- xxx
+
+random variable (function, element)
+
+\[\sigma (x)\equiv X^{-1}(\varepsilon )\]
+
+如果沒有$\sigma$ - algebra的基礎，很難繼續
+
+\subsection{Probability}
+A Probability P on $\mathcal{F} $
+\[\mathsf{P} :\mathcal{F} \rightarrow [0,1]\]
+
+(1) P($\Omega$)=1
+
+(2)P($\cup_1^{\infty} A_n$ ) =$ \sum_{n = 1}^{\infty} A_n   $
+
+if \(A_n\in \mathcal{F}  \) and \(A_n \bigcap A_M = \emptyset  \) if \(n\neq m\)
+
+(3) Countable additivity
+
+finite additivity.
+
+vector measure:
+
+\[\mathsf{P} :\mathcal{F} \rightarrow \mathcal{B} \]
+P($\cup_1^{\infty} A_n$ ) =$ \sum_{n = 1}^{\infty} P(A_n )  $
+
+
+\subsection{Stochastic Process 隨機過程}
+
+現在都叫Stochastic Process，因爲Stochastic看起來比較有學問，以前叫作random.
+
+起名字很重要。
+
+有人説random number叫亂數翻譯很不好。
+
+\[I={1}\]
+\[\left\{X(t);t\in I\right\}\]
+
+I: index set
+
+\(X(t)\) is a Stochastic process if \(X(t)\) is a r.v. \(\forall t \in I\)
+
+\(I = [0,T)\) or \(I=[0,\infty)\)
+
+\(I=\mathbb{R} \) or \(I=\mathbb{R}^k \) random field
+
+I 有次序
+
+\[(\Omega, \mathcal{F} ,\left\{\mathcal{F} _t\right\}) t\in I\]
+Filtration
+\[\forall t , \mathcal{F}_t \subseteq \mathcal{F}, \mathcal{F}_s \subseteq \mathcal{F}, if s\leq t\]
+\( \mathcal{F}_t\): information w.r.t time t
+
+
+\[\mathcal{F}_{t^{+}}\equiv \underset{s>t}{\bigcap}\mathcal{F}_s \]
+right continuous Filtration
+\[\mathcal{F}_t = \mathcal{F}_{t+}\]
+通常都假設右連續
+
+---
+
+\(X(t)\) is a Stochastic process adapted to \(\{\mathcal{F}_t\}\) if \(X(t)\in\mathcal{F}_t, \forall t\)
+
+\(\sigma(X(t))\subseteq \mathcal{F}_t \)
+
+Usual condition 
+
+\(\Omega, \mathcal{F}, \{\mathcal{F}_t\},P\)
+
+\(\mathcal{F}\)先做condition under P
+
+if \(\mathcal{F}_t\) contains all the null sets in \(\mathcal{F}\) and \(\{\mathcal{F}_t\}\) is right continuous
+
+*
+
+統計和機率的差異
+
+統計比較像自然科學， induction
+
+機率比較， deduction
+
+X:
+
+什麽叫做我知道X？
+
+數學，至少要知道X的distribution
+
+\(F_X(t) = P(X \leq t)\,  \forall t\)
+
+X and Y 什麽叫2個隨機變數一樣？
+
+\(F_X(t) =F_Y(t) \, \forall t\)
+
+\(X\overset{w}{\sim}Y\) weakly
+
+\(X\overset{d}{\sim}Y\)
+
+
+X and Y ，什麽叫2個隨機過程一樣？
+
+最弱的要求：
+finite-dimensional distributions 要一樣
+\[P_{t_1,\ldots,t_n}(x_1,\ldots,x_n) = P(X(t_1)\leq x_1,\ldots,X(t_n)\leq x_n)\]
+
+\[X(t),t\in I\]
+\[P_{t_1,\ldots,t_n}(x_1,\ldots,x_n) = P(X(t_1)\leq x_1,\ldots,X(t_n)\leq x_n), n\in\mathbf{N} ,t_1,\ldots,t_n \in [0,\infty)\]
+
+the family of all finite-dim distributions is consistent
+\[P_{t_1,\ldots,t_n}(x_1,\ldots,x_n) = P_{t_{\pi(1)},\ldots,t_{\pi(n)}}(X_{\pi(1)},\ldots,X_{\pi(n)})\]
+\[\pi:\{1,\ldots,n\}\rightarrow \{1,\ldots,n\} \]
+permutation
+
+
+\subsection{隨機過程的不同解釋}
+1. \(\{X(t),t\leq s\},X(t)\) is a r.v.
+
+
+2. \(L^2\) Theory , \(\E X^2(t) <\infty \forall t\)
+
+\(t \mapsto X(t,\cdot )\in L^2(P)=\{Y:\E y^2 <\infty\} \)
+is a curve in \(L^2(P)\)
+
+通常都假設
+\(X(t) \) is continuous in \(L^2(P) \)
+
+spectral Theory
+
+Karhunen–Loève expansion
+
+北歐
+
+\(cov(t,s) = \E X(t)\)
+
+\end{document}

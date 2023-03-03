@@ -1,0 +1,70 @@
+---
+title: "1112 隨機微積分"
+author: "黃老師"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+output:
+  bookdown::gitbook: default
+#   bookdown::pdf_book: default
+  theme: united
+  toc: true
+link-citations: true
+---
+
+# Preface {-}
+隨機微積分
+
+
+111-2 學期《隨機微積分》課堂筆記。采用R的bookdown製作，輸出格式為bookdown::gitbook。
+
+## Text and references for this course
+
+不一定，碰到再講
+
+基本的：
+
+- Le Gall, Jean-Français, Brownian Motion, martigales, and stochastic Integration, Springer
+- Protter, Philip E, Stochastic Integration and Differential Equations,比較難的，習題比較難，Ito Formula 的部分 參考這本
+- Steele,J. Michael, Stochastic Calculus and Financial Applications，在**金融**的應用是有意思的，投資組合，合理的限制
+  $0=\int_0^1 x(t)\, dB(t)$
+- Friedman, Avner, Stochastic Differential Equations and Applications, vol I&II, 很老的書，就講得很清楚！
+- Klebaner, Fima C, Introduction to Stochastic Calculus with Applications 2nd Edition，内容有錯誤，老師認識他，但是沒有告訴他有錯^^!
+- Chung,K.L,**鍾開萊**，華人第1或1.5代的機率學家, and R.J. Williams鍾先生的學生, Introduction to Stochastic Integration, 2nd Edition. 鍾先生英文非常好， 書寫得非常好，老師30年前就用他的書
+- Freedman, David, Brownian Motion and Diffusion 擴散過程
+
+
+## 演講停課資訊
+
+- 03/08-03/03/10
+  
+  天數202
+  Persi Diaconis 魔術師演講
+
+  1530-1630
+
+  2023 許振榮講座
+
+  講者很小就跑江湖，洗牌，很有機率的直覺，又會去念大學
+
+- 05/05
+
+  2023 spring 
+
+  probability workshop 在 NCTS
+
+
+
+
+
+## Grading
+Homework: 100%.
+
+## Outline
+
+- 基本的 Probability
+- BM(Brownian Motion), stochastic integration w.r.t. BM
+- SDE(stochastic differential equations)
+- Martingles, semi-martigales
+- Change of measures
+- 更一般的 stochastic Integration

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1112 隨機微積分</title>
+  <meta name="description" content="1112 隨機微積分" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1112 隨機微積分" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1112 隨機微積分" />
+  
+  
+  
+
+<meta name="author" content="黃老師" />
+
+
+<meta name="date" content="2023-03-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path=""><a href="#preface"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="#text-and-references-for-this-course"><i class="fa fa-check"></i><b>0.1</b> Text and references for this course</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="#演講停課資訊"><i class="fa fa-check"></i><b>0.2</b> 演講停課資訊</a></li>
+<li class="chapter" data-level="0.3" data-path="index.html"><a href="#grading"><i class="fa fa-check"></i><b>0.3</b> Grading</a></li>
+<li class="chapter" data-level="0.4" data-path="index.html"><a href="#outline"><i class="fa fa-check"></i><b>0.4</b> Outline</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">1112 隨機微積分</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">1112 隨機微積分</h1>
+<p class="author"><em>黃老師</em></p>
+<p class="date"><em>2023-03-03</em></p>
+</div>
+<div id="preface" class="section level1 unnumbered hasAnchor">
+<h1>Preface<a href="#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>隨機微積分</p>
+<p>111-2 學期《隨機微積分》課堂筆記。采用R的bookdown製作，輸出格式為bookdown::gitbook。</p>
+<div id="text-and-references-for-this-course" class="section level2 hasAnchor" number="0.1">
+<h2><span class="header-section-number">0.1</span> Text and references for this course<a href="#text-and-references-for-this-course" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>不一定，碰到再講</p>
+<p>基本的：</p>
+<ul>
+<li>Le Gall, Jean-Français, Brownian Motion, martigales, and stochastic Integration, Springer</li>
+<li>Protter, Philip E, Stochastic Integration and Differential Equations,比較難的，習題比較難，Ito Formula 的部分 參考這本</li>
+<li>Steele,J. Michael, Stochastic Calculus and Financial Applications，在<strong>金融</strong>的應用是有意思的，投資組合，合理的限制
+<span class="math inline">\(0=\int_0^1 x(t)\, dB(t)\)</span></li>
+<li>Friedman, Avner, Stochastic Differential Equations and Applications, vol I&amp;II, 很老的書，就講得很清楚！</li>
+<li>Klebaner, Fima C, Introduction to Stochastic Calculus with Applications 2nd Edition，内容有錯誤，老師認識他，但是沒有告訴他有錯^^!</li>
+<li>Chung,K.L,<strong>鍾開萊</strong>，華人第1或1.5代的機率學家, and R.J. Williams鍾先生的學生, Introduction to Stochastic Integration, 2nd Edition. 鍾先生英文非常好， 書寫得非常好，老師30年前就用他的書</li>
+<li>Freedman, David, Brownian Motion and Diffusion 擴散過程</li>
+</ul>
+</div>
+<div id="演講停課資訊" class="section level2 hasAnchor" number="0.2">
+<h2><span class="header-section-number">0.2</span> 演講停課資訊<a href="#演講停課資訊" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>03/08-03/03/10</p>
+<p>天數202
+Persi Diaconis 魔術師演講</p>
+<p>1530-1630</p>
+<p>2023 許振榮講座</p>
+<p>講者很小就跑江湖，洗牌，很有機率的直覺，又會去念大學</p></li>
+<li><p>05/05</p>
+<p>2023 spring</p>
+<p>probability workshop 在 NCTS</p></li>
+</ul>
+</div>
+<div id="grading" class="section level2 hasAnchor" number="0.3">
+<h2><span class="header-section-number">0.3</span> Grading<a href="#grading" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Homework: 100%.</p>
+</div>
+<div id="outline" class="section level2 hasAnchor" number="0.4">
+<h2><span class="header-section-number">0.4</span> Outline<a href="#outline" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>基本的 Probability</li>
+<li>BM(Brownian Motion), stochastic integration w.r.t. BM</li>
+<li>SDE(stochastic differential equations)</li>
+<li>Martingles, semi-martigales</li>
+<li>Change of measures</li>
+<li>更一般的 stochastic Integration</li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
